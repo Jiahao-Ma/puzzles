@@ -65,7 +65,7 @@
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>Australian National University,</span>
               <span class="author-block"><sup>2</sup>Griffith University,</span>
-              <span class="author-block"><sup>3</sup>CSIRO DATA61</span>
+              <span class="author-block"><sup>3</sup>CSIRO's Data61</span>
             </div>
 
             <!-- <div class="is-size-5 publication-authors" style="margin-top: 0.5em;">
@@ -80,7 +80,7 @@
                     <span class="icon">
                       <i class="ai ai-arxiv"></i>
                     </span>
-                    <span>arXiv</span>
+                    <span>Paper</span>
                   </a>
                 </span>
 
@@ -106,7 +106,7 @@
           <source src="materials\video\Puzzles.mp4" type="video/mp4">
         </video>
         <h2 class="subtitle has-text-centered">
-          Puzzles  augments 3D reconstruction training by generating diverse novel viewpoints and 
+          <strong>Puzzles</strong>  augments 3D reconstruction training by generating diverse novel viewpoints and 
         realistic camera trajectories from single images or video clips, eliminating redundant frames.
         </h2>
       </div>
@@ -127,8 +127,8 @@
                     However, the performance of these models is constrained by the diversity and scale of available training data. 
                     In this work, we introduce <strong>Puzzles</strong>, a data augmentation strategy that synthesizes an unbounded volume of high-quality, 
                     posed video-depth data from just a single image or video clip. By simulating diverse camera trajectories and realistic scene geometry through targeted image transformations, 
-                    Puzzles significantly enhances data variety. Extensive experiments show that integrating Puzzles into existing video-based 3D reconstruction pipelines consistently boosts performance, 
-                    all without modifying the underlying network architecture. Notably, models trained on only 10% of the original data, augmented with Puzzles, still achieve accuracy comparable to those trained on the full dataset.
+                    <strong>Puzzles</strong> significantly enhances data variety. Extensive experiments show that integrating <strong>Puzzles</strong> into existing video-based 3D reconstruction pipelines consistently boosts performance, 
+                    all without modifying the underlying network architecture. Notably, models trained on only 10% of the original data, augmented with <strong>Puzzles</strong>, still achieve accuracy comparable to those trained on the full dataset.
                 </p>
             </div>
         </div>
@@ -169,12 +169,12 @@
 
     <div class="columns is-centered has-text-centered">
       <div class="column is-full-width">
-        <h2 class="title is-3" style="margin-top: -30px">Visualization</h2>
+        <h2 class="title is-3" style="margin-top: -30px">Example</h2>
         
         <img src="materials\image\image2clips_example.jpg" class="center">
         <div class="content has-text-justified">
           <p style="margin-top: 30px">
-            <strong>Example of Image-to-Clips.</strong>  From one image (<em>left</em>), the method samples overlapping patches and assigns 6-DoF camera paths to craft view-consistent clips, turning a single frame into diverse, realistic training sequences across human, indoor, and outdoor scenes.
+            <strong>Example of Image-to-Clips.</strong>  From one image (<em>left</em>), the method samples overlapping patches and assigns 6-DoF camera paths to craft view-consistent clips (<em>right</em>), turning a single frame into diverse, realistic training sequences across human, indoor, and outdoor scenes.
           </p>
         </div>
     
@@ -198,7 +198,7 @@
   <section class="hero is-light">
     <div class="hero-body" style="padding: 0;">
       <div class="container is-max-desktop">
-        <h3 class="title is-3" style="margin-top: 20px;">Image-to-Clips Visualization Demo</h3>
+        <h3 class="title is-3" style="margin-top: 20px;">Demo</h3>
         <p> Demonstrates how the Image-to-Clips method samples overlapping patches (colored regions) from a single image <br>
            and generates diverse video clips, producing diverse training sequences.</p>
         <div id="carouselVideoReconstruction" class="carousel" data-slides-to-scroll="1" data-slides-to-show="1">
@@ -246,7 +246,7 @@
   <section class="hero is-light">
     <div class="hero-body" style="padding: 0;">
       <div class="container is-max-desktop">
-        <h3 class="title is-3" style="margin-top: 50px;">Baseline <em>vs.</em> Puzzles-Enhanced 3D Reconstruction</h3>
+        <h3 class="title is-3" style="margin-top: 50px;">Qualtitative Evaluation</h3>
         <p>
            Side-by-side comparison on real-world captured video: standard 3D reconstruction (left) vs. Puzzles-augmented result (right), <br>
   showcasing richer structural detail and more complete geometry. Click the <strong>arrow</strong> button for extra comparison.
@@ -290,6 +290,110 @@
   </section>
 
   <!--/Video Comparison. -->
+
+  <!-- Quantitative Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <h3 class="title is-3">Quantitative Evaluation</h3>
+
+   
+        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth metrics">
+        <caption class="has-text-centered">
+          <strong>Table&nbsp;1.</strong>
+          Quantitative comparison on 7Scenes, NRGBD and DTU.
+          Value &amp; relative improvement (Δ) after using <strong>Puzzles</strong>.
+        </caption>
+
+        <thead>
+          <tr>
+            <th rowspan="3">Method</th>
+            <th rowspan="3">w/ Puzzles</th>
+            <th rowspan="3">Data</th>
+            <th colspan="4">7Scenes</th>
+            <th colspan="4">NRGBD</th>
+            <th colspan="4">DTU</th>
+          </tr>
+          <tr>
+            <th colspan="2">Acc&nbsp;↓</th><th colspan="2">Comp&nbsp;↓</th>
+            <th colspan="2">Acc&nbsp;↓</th><th colspan="2">Comp&nbsp;↓</th>
+            <th colspan="2">Acc&nbsp;↓</th><th colspan="2">Comp&nbsp;↓</th>
+          </tr>
+          <tr>
+            <th>Value</th><th>Δ (%)</th><th>Value</th><th>Δ (%)</th>
+            <th>Value</th><th>Δ (%)</th><th>Value</th><th>Δ (%)</th>
+            <th>Value</th><th>Δ (%)</th><th>Value</th><th>Δ (%)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <!-- Spann3R -->
+          <tr>
+            <td rowspan="3"><strong>Spann3R</strong></td>
+            <td>-</td><td>full</td>
+            <td>0.0388</td><td></td><td>0.0253</td><td></td>
+            <td>0.0686</td><td></td><td>0.0315</td><td></td>
+            <td>6.2432</td><td></td><td>3.1259</td><td></td>
+          </tr>
+          <tr>
+            <td>✓</td><td>1/10</td>
+            <td>0.0389</td><td class="bad">-0.26</td><td>0.0248</td><td class="good">+1.98</td>
+            <td>0.0753</td><td class="bad">-9.79</td><td>0.0341</td><td class="bad">-8.50</td>
+            <td>4.9832</td><td class="good">+20.18</td><td>2.5172</td><td class="good">+19.47</td>
+          </tr>
+          <tr>
+            <td>✓</td><td>full</td>
+            <td>0.0330</td><td class="good">+14.94</td><td>0.0224</td><td class="good">+11.46</td>
+            <td>0.0644</td><td class="good">+6.00</td><td>0.0291</td><td class="good">+7.51</td>
+            <td>5.0004</td><td class="good">+19.90</td><td>2.5113</td><td class="good">+19.66</td>
+          </tr>
+
+          <!-- Fast3R -->
+          <tr>
+            <td rowspan="3"><strong>Fast3R</strong></td>
+            <td>-</td><td>full</td>
+            <td>0.0412</td><td></td><td>0.0275</td><td></td>
+            <td>0.0735</td><td></td><td>0.0287</td><td></td>
+            <td>4.2961</td><td></td><td>2.0681</td><td></td>
+          </tr>
+          <tr>
+            <td>✓</td><td>1/10</td>
+            <td>0.0402</td><td class="good">+2.30</td><td>0.0272</td><td class="good">+1.09</td>
+            <td>0.0772</td><td class="bad">-5.11</td><td>0.0295</td><td class="bad">-2.78</td>
+            <td>3.7174</td><td class="good">+13.47</td><td>1.8941</td><td class="good">+8.41</td>
+          </tr>
+          <tr>
+            <td>✓</td><td>full</td>
+            <td>0.0342</td><td class="good">+16.99</td><td>0.0239</td><td class="good">+13.09</td>
+            <td>0.0684</td><td class="good">+6.94</td><td>0.0259</td><td class="good">+9.75</td>
+            <td>3.5912</td><td class="good">+16.41</td><td>1.7379</td><td class="good">+15.96</td>
+          </tr>
+
+          <!-- SLAM3R -->
+          <tr>
+            <td rowspan="3"><strong>SLAM3R</strong></td>
+            <td>-</td><td>full</td>
+            <td>0.0291</td><td></td><td>0.0245</td><td></td>
+            <td>0.0481</td><td></td><td>0.0292</td><td></td>
+            <td>4.3820</td><td></td><td>2.4754</td><td></td>
+          </tr>
+          <tr>
+            <td>✓</td><td>1/10</td>
+            <td>0.0289</td><td class="good">+0.68</td><td>0.0237</td><td class="good">+3.26</td>
+            <td>0.0493</td><td class="bad">-2.49</td><td>0.0313</td><td class="bad">-7.19</td>
+            <td>3.5980</td><td class="good">+17.89</td><td>2.0891</td><td class="good">+15.60</td>
+          </tr>
+          <tr>
+            <td>✓</td><td>full</td>
+            <td>0.0264</td><td class="good">+9.27</td><td>0.0218</td><td class="good">+11.02</td>
+            <td>0.0439</td><td class="good">+8.73</td><td>0.0263</td><td class="good">+9.93</td>
+            <td>3.6497</td><td class="good">+16.71</td><td>2.0762</td><td class="good">+16.12</td>
+          </tr>
+
+        </tbody>
+      </table>
+  
+  </div>
+</section>
 
   
 

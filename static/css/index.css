@@ -580,3 +580,28 @@ model-viewer {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
 }
+
+table.metrics caption {
+  caption-side: bottom;
+  font-size: 0.85rem;
+  padding-top: .4em;
+  line-height: 1.4;
+  text-align: center;
+}
+table.metrics .good { color: #2ca02c; }
+table.metrics .bad  { color: #d62728; }
+
+table.metrics {
+  table-layout: fixed;        
+  font-size: 0.75rem;         
+}
+
+/* table.table.metrics th,
+table.table.metrics td {
+  text-align: center !important;
+} */
+table.table.is-bordered.is-striped.is-narrow.is-hoverable.is-fullwidth.metrics th,
+table.table.is-bordered.is-striped.is-narrow.is-hoverable.is-fullwidth.metrics td {
+  text-align: center !important;
+  vertical-align: middle !important;
+}
