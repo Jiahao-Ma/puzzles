@@ -296,14 +296,18 @@
   <div class="container is-max-desktop">
     <h3 class="title is-3">Quantitative Evaluation</h3>
 
-   
-        <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth metrics">
-        <caption class="has-text-centered">
-          <strong>Table&nbsp;1.</strong>
-          Quantitative comparison on 7Scenes, NRGBD and DTU.
-          Value &amp; relative improvement (Δ) after using <strong>Puzzles</strong>.
-        </caption>
-
+    
+    
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth metrics">
+      <caption class="has-text-centered">
+        <strong>Table&nbsp;1.</strong>
+        Quantitative comparison on 7Scenes, NRGBD and DTU.
+        Value &amp; relative improvement (Δ) after using <strong>Puzzles</strong>.
+      </caption>
+      <!-- <p>
+        We adopt three representative video-based 3R-series methods, <a href="https://github.com/HengyiWang/spann3r?tab=readme-ov-file">Spann3R</a>, <a href="https://github.com/PKU-VCL-3DV/SLAM3R/tree/main">SLAM3R</a>, and <a href="https://github.com/facebookresearch/fast3r">Fast3R</a>, as baselines.
+  Since each was originally trained on a distinct dataset, we preserve their published training protocols and architectures, and retrain them on a unified dataset both \textit{with} and \textit{without} our Puzzles data augmentation. As a result, the reported metrics may deviate from those reported in the original papers; our objective is not to replicate prior results, but to investigate how each model responds to changes in data distribution.
+      </p> -->
         <thead>
           <tr>
             <th rowspan="3">Method</th>
@@ -392,6 +396,9 @@
         </tbody>
       </table>
   
+      <p>
+      To evaluate the impact of Puzzles augmentation, we retrain three video-based 3R-series baselines—<a href="https://github.com/HengyiWang/spann3r?tab=readme-ov-file">Spann3R</a>, <a href="https://github.com/PKU-VCL-3DV/SLAM3R/tree/main">SLAM3R</a>, and <a href="https://github.com/facebookresearch/fast3r">Fast3R</a>—on unified dataset (which differs from their original training data), using each model's published architecture and training protocol, both with and without Puzzles. Reported metrics may therefore diverge from the papers; our goal is to measure how each model reacts to a new data distribution and augmentation.
+      </p>
   </div>
 </section>
 
@@ -400,7 +407,7 @@
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>TODO</code></pre>
+      <pre><code>Coming soon...</code></pre>
     </div>
   </section>
 
